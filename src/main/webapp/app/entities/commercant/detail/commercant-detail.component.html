@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commercant">
+      <h2 data-cy="commercantDetailsHeading"><span jhiTranslate="coopcycleApp.commercant.detail.title">Commercant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ commercant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.companyName">Company Name</span></dt>
+        <dd>
+          <span>{{ commercant.companyName }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.address">Address</span></dt>
+        <dd>
+          <span>{{ commercant.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.phone">Phone</span></dt>
+        <dd>
+          <span>{{ commercant.phone }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.user">User</span></dt>
+        <dd>
+          <span>{{ commercant.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commercant', commercant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

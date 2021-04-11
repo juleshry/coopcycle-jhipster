@@ -48,6 +48,9 @@ public class CacheConfiguration {
             createCache(cm, fr.polytech.info4.domain.User.class.getName());
             createCache(cm, fr.polytech.info4.domain.Authority.class.getName());
             createCache(cm, fr.polytech.info4.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.polytech.info4.domain.Client.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Coursier.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Commercant.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

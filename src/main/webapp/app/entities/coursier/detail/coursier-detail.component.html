@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="coursier">
+      <h2 data-cy="coursierDetailsHeading"><span jhiTranslate="coopcycleApp.coursier.detail.title">Coursier</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ coursier.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.coursier.name">Name</span></dt>
+        <dd>
+          <span>{{ coursier.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.coursier.surname">Surname</span></dt>
+        <dd>
+          <span>{{ coursier.surname }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.coursier.transportMean">Transport Mean</span></dt>
+        <dd>
+          <span>{{ coursier.transportMean }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.coursier.phone">Phone</span></dt>
+        <dd>
+          <span>{{ coursier.phone }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.coursier.user">User</span></dt>
+        <dd>
+          <span>{{ coursier.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/coursier', coursier.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

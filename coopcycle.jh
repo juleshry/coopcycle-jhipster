@@ -1,0 +1,32 @@
+entity Client {
+  name String required
+  surname String required
+  address String required
+  phone String required minlength(10) maxlength(10) pattern(/[0-9]*/)
+}
+
+entity Coursier {
+  name String required
+  surname String required
+  transportMean String required
+  phone String required minlength(10) maxlength(10) pattern(/[0-9]*/)
+}
+
+entity Commercant {
+  companyName String required
+  address String required
+  phone String required minlength(10) maxlength(10) pattern(/[0-9]*/)
+}
+
+relationship OneToOne {
+  Client{user(login)} to User
+  Coursier{user(login)} to User
+  Commercant{user(login)} to User
+}
+
+paginate Client with infinite-scroll
+paginate Coursier with infinite-scroll
+paginate Commercant with infinite-scroll
+
+dto * with mapstruct
+service * with serviceImpl
